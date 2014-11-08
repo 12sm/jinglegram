@@ -7,4 +7,9 @@ var Mongo = require('mongodb');
 
 function User(data){
   this.youtube = data.youtube;
+  this.sample  = data.sample;
+  this.note    = data.note;
+  if(jinglrgram._id){
+    this._id = new Mongo.ObjectID(jinglegram._id);
+  }
 }
