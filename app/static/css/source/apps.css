@@ -1,0 +1,81 @@
+/************************
+**    BASE             **
+************************/
+
+body {
+  font-family:Helvetica, Arial, sans-serif;
+  text-size:18px;
+}
+
+p {}
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+.text-right {
+  text-align:right;
+}
+.text-left {
+  text-align:left;
+}
+.text-center {
+  text-align:center;
+}
+
+
+.color-1-text {}
+.color-2-text {}
+.color-1-back {}
+.color-2-back {}
+  
+
+
+.col {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  float:none;
+  margin:0px auto;
+}
+
+.img-width {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.img-height {
+  width: auto !important;
+  height: 100% !important;
+}
+
+.img-responsive{
+  max-width:100%;
+  height: auto;
+}
+
+.pad-15 {padding: 15px;}
+.pad-30 {padding: 30px;}
+.pad-15-v {padding: 15px 0;}
+.pad-15-h {padding: 0 15px;}
+.pad-30-v {padding: 30px 0;}
+.pad-30-h {padding: 0 30px;}
+.marg-15 {margin: 15px;}
+.marg-30 {margin: 30px;}
+.marg-15-v {margin: 15px 0;}
+.marg-15-h {margin: 0 15px;}
+.marg-30-v {margin: 30px 0;}
+.marg-30-h {margin: 0 30px;}
