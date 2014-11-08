@@ -1,10 +1,11 @@
 'use strict';
-var dbname    = 'jinglegram';
-var http      = require('http');
-var express   = require('express');
-var path      = require('path');
-var initMongo = require('./lib/init-mongo.js');
-var app       = express();
+var dbname     = 'jinglegram';
+var http       = require('http');
+var express    = require('express');
+var bodyParser = require('body-parser');
+var path       = require('path');
+var initMongo  = require('./lib/init-mongo.js');
+var app        = express();
 
 
 app.set('port', 3000);
