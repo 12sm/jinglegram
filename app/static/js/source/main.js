@@ -6,10 +6,7 @@
 
   function initialize(){
     //Load Youtube API
-    gapi.client.setApiKey(YOUR API KEY);
-
-    gapi.client.load('Youtube Data API', '3').then(function() { console.log('Youtbe API loaded.'); });
-    //OnePageScroll
+       //OnePageScroll
     $(".main").onepage_scroll({
        sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
        easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
