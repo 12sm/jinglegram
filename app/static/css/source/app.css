@@ -7,7 +7,7 @@ body {
   font-family:'Arvo' serif;
   font-size:18px;
   text-align:center;
-  background:#6ce497;
+  background:#000;
   color:#fff;
   position:relative;
   height: 100%;
@@ -24,6 +24,40 @@ body {
 section {
   height:100%;
   width:100%;
+}
+
+.section1 {
+background: #6ce497; /* Old browsers */
+background: -moz-linear-gradient(top,  #6ce497 0%, #6ce497 39%, #aae0bc 100%, #aae0bc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6ce497), color-stop(39%,#6ce497), color-stop(100%,#aae0bc), color-stop(100%,#aae0bc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #6ce497 0%,#6ce497 39%,#aae0bc 100%,#aae0bc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #6ce497 0%,#6ce497 39%,#aae0bc 100%,#aae0bc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #6ce497 0%,#6ce497 39%,#aae0bc 100%,#aae0bc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #6ce497 0%,#6ce497 39%,#aae0bc 100%,#aae0bc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ce497', endColorstr='#aae0bc',GradientType=0 ); /* IE6-9 */
+}
+
+.section1 footer {
+  width:100%;
+  height:150px;
+  background:transparent url(../img/scene1.png) bottom scroll no-repeat;
+  background-size:contain;
+}
+
+.section2 {
+background: #ff0000; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff0000 0%, #ff5656 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0000), color-stop(100%,#ff5656)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ff0000 0%,#ff5656 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ff0000 0%,#ff5656 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ff0000 0%,#ff5656 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ff0000 0%,#ff5656 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff5656',GradientType=0 ); /* IE6-9 */
+}
+
+a, button,
+a:focus, button:focus {
+  outline:none!important;
 }
 
 p {}
@@ -145,4 +179,13 @@ input#uploadForm {
 .search:before {
   content: "\e60e";
   font-family: 'icomoon';
+}
+
+.next {
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 100%;
+background: none;
+font-size: 30px;
 }
