@@ -5,6 +5,11 @@
   $(document).ready(initialize);
 
   function initialize(){
+    //Load Youtube API
+    gapi.client.setApiKey(YOUR API KEY);
+
+    gapi.client.load('Youtube Data API', '3').then(function() { console.log('Youtbe API loaded.'); });
+    //OnePageScroll
     $(".main").onepage_scroll({
        sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
        easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
@@ -24,5 +29,24 @@
     });
 
   }
+
+  // After the API loads, call a function to enable the search box.
+function handleAPILoaded() {
+  $('#search-button').attr('disabled', false);
+}
+
+// Search for a specified string.
+function search() {
+  var q = $('#uploadForm').val();
+  var request = gapi.client.youtube.search.list({
+    q: q,
+    part: 'snippet'
+  });
+
+  request.execute(function(response) {
+    var str = JSON.stringify(response.result);
+    $('#search-container').html('<pre>' + str + '</pre>');
+  });
+}
 
 })();
