@@ -1,3 +1,29 @@
+//Send google the API key
+function authinit() {
+    debugger;
+    console.log('authInit firing');
+    gapi.client.setApiKey('AIzaSyDHjyZ5OtsbY_6PxkKa_nCu21vAM21H5Ak');
+    gapi.client.load('youtube', 'v3').then(handleAPILoaded);
+  }
+   // After the API loads, call a function to enable the search box.
+function handleAPILoaded() {
+  $('#uploadForm').attr('disabled', false);
+  console.log('API Loaded');
+}
+
+// Search for a specified string.
+function search() {
+  var q = $('#uploadForm').val();
+  var request = gapi.client.youtube.search.list({
+    q: q,
+    part: 'snippet'
+  });
+
+  request.execute(function(response) {
+    var str = JSON.stringify(response.result);
+    $('#search-container').html('<pre>' + str + '</pre>');
+  });
+}
 (function(){
 
   'use strict';
@@ -30,24 +56,6 @@
     });
 
   }
-
-  // After the API loads, call a function to enable the search box.
-function handleAPILoaded() {
-  $('#search-button').attr('disabled', false);
-}
-
-// Search for a specified string.
-function search() {
-  var q = $('#uploadForm').val();
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet'
-  });
-
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
-  });
-}
+//call API
 
 })();
