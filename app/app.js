@@ -2,8 +2,6 @@
 var http    = require('http');
 var express = require('express');
 var path    = require('path');
-var mime    = require('mime');
-var mime    = require('fs');
 var app     = express();
 
 
