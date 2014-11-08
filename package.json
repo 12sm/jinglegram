@@ -4,7 +4,6 @@
   "private"      : true,
   "dependencies" : {
     "express"    : "3.3.4",
-    "ejs"        : "*",
-    "nodemon"    : "*"
+    "ejs"        : "1.0.0"
   }
 }
