@@ -1,8 +1,10 @@
-var http = require('http'),
-    express = require('express'),
-    path = require('path');
+'use strict';
+var http    = require('http');
+var express = require('express');
+var path    = require('path');
+var app     = express();
 
-var app = express();
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -10,11 +12,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
-  res.render('index.ejs');
+  res.render('index');
+});
+
+app.get('/wtf', function (req, res) {
+  res.render('wtf');
 });
 
 app.use(function (req,res) {
-  res.render('404.ejs', {url:req.url});
+  res.render('404', {url:req.url});
 });
 
 http.createServer(app).listen(app.get('port'), function(){
