@@ -2,14 +2,26 @@
 
 module.exports = Jinglegram;
 
-var users = global.nss.db.collection('jinglegrams');
-var Mongo = require('mongodb');
+var users    = global.jg.db.collection('jinglegrams');
+var Mongo    = require('mongodb');
 
 function User(data){
   this.youtube = data.youtube;
   this.sample  = data.sample;
   this.note    = data.note;
-  if(jinglrgram._id){
+  if(jinglegram._id){
     this._id = new Mongo.ObjectID(jinglegram._id);
   }
 }
+
+Jinglegram.prototype.insert = function(fn){
+  jinglegrams.insert(this, function(err, record){
+    fn(record);
+  });
+};
+
+Jinglegram.findAll = function(fn){
+  jinglegrams.find().toArray(function(err, records){
+    fn(records);
+  });
+};
