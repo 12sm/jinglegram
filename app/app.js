@@ -13,6 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(initMongo.connect);
+app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/fonts',express.static(path.join(__dirname, 'static/fonts')));
 app.use('/js',express.static(path.join(__dirname, 'static/js')));
