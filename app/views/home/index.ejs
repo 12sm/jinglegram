@@ -9,9 +9,8 @@
     <script src="js/vendor/jquery-onepagescroll.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/remix.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
     <script src="js/source/main.js"></script>
-    <script src="js/source/youtube-search.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=authinit"></script>
     <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/onepagescroll.css" />
@@ -32,8 +31,10 @@
               No Worries...send a JingleGram
             </p>
             <p class="search">
+            <form name="search-pr">
               <input id="uploadForm" type="text" placeholder="youtube url or keyword" />
             </p>
+            <div id="search-container"></div>
           </div>
         </div>
       </section>
