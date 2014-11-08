@@ -7,7 +7,7 @@ function authinit() {
   }
    // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
-  $('#search-button').attr('disabled', false);
+  $('#uploadForm').attr('disabled', false);
   console.log('API Loaded');
 }
 
