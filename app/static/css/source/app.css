@@ -4,17 +4,35 @@
 
 body {
   font-family:Helvetica, Arial, sans-serif;
-  text-size:18px;
+  font-size:18px;
+  text-align:center;
+  background:#4be57a;
+  color:#fff;
+  position:relative;
+  height: 100%;
+  width:100%;
+  overflow:hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main {
+  height:100%;
+  width:100%;
+}
+
+section {
+  height:100%;
+  width:100%;
 }
 
 p {}
 
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+h1 {font-size:60px;}
+h2 {font-size:45px;}
+h3 {font-size:30px;}
+h4 {font-size:15px;}
+h5 {font-size:10px;}
+h6 {font-size:8px;}
 
 .text-right {
   text-align:right;
@@ -31,8 +49,12 @@ h6 {}
 .color-2-text {}
 .color-1-back {}
 .color-2-back {}
-  
 
+.lato {font-family: 'Lato', sans-serif;}
+.arvo {font-family: 'Arvo', serif;}
+.lobster {font-family: 'Lobster', cursive;}
+.open {font-family: 'Open Sans', sans-serif;}
+.changa {font-family: 'Changa One', cursive;}
 
 .col {
   max-width: 1170px;
