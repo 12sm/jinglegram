@@ -11,11 +11,14 @@ function handleAPILoaded() {
 }
 
 // Search for a specified string.
-function search() {
+function vidSearch() {
+  debugger;
+  console.log('search fired');
   var q = $('#uploadForm').val();
   var request = gapi.client.youtube.search.list({
     q: q,
-    part: 'snippet'
+    part: 'snippet',
+    type: 'video',
   });
 
   request.execute(function(response) {
@@ -24,6 +27,9 @@ function search() {
   });
 }
 (function(){
+  $(".search").submit(function(e) {
+    e.preventDefault();
+  });
 
   'use strict';
 
