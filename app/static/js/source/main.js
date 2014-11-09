@@ -43,9 +43,9 @@ function vidSearch() {
         setTimeout(function(){
         $('#search-results').removeClass('hide');
           $('#search-results').empty();
-          var titles = [];
-          var ids = [];
-          var thumbnails = [];
+          titles = [];
+          ids = [];
+          thumbnails = [];
         var request = gapi.client.youtube.search.list({
           q: q,
           part: 'snippet',
@@ -140,3 +140,6 @@ function vidSearch() {
     });
   }
 })();
+$('.gram-me').click(function(){
+  $("#options").ajaxSubmit({url: '../routes/jinglegrams.js', type: 'post'})
+});
