@@ -4,8 +4,9 @@ var Mongo = require('mongodb');
 
 function Jinglegram(data){
   this.youtube = data.youtube;
-  this.sample  = data.sample;
-  this.note    = data.note;
+  this.jing    = data.jing;
+  this.bling   = data.bling;
+  this.message = data.message;
   if(jinglegram._id){
     this._id = new Mongo.ObjectID(jinglegram._id);
   }

@@ -17,19 +17,10 @@ app.use(initRoutes);
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-// app.use('/fonts',express.static(path.join(__dirname, 'static/fonts')));
-// app.use('/js',express.static(path.join(__dirname, 'static/js')));
-// app.use('/css',express.static(path.join(__dirname, 'static/css')));
-// app.use('/img',express.static(path.join(__dirname, 'static/img')));
-//
-// app.post('/')
-// app.get('/', function (req, res) {
-//   res.render('home/index.ejs');
-// });
 
-// app.use(function (req,res) {
-//   res.render('404', {url:req.url});
-// });
+app.use(function (req,res) {
+  res.render('./views/404.ejs', {url:req.url});
+});
 app.use(app.router);
 //-------- PIPELINE ENDS --------//
 
