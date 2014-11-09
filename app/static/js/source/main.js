@@ -16,6 +16,14 @@ function handleAPILoaded() {
   console.log('API Loaded');
 }
 
+function searchSelect(){
+  $('.list-item').click(function(){
+      var id = $(this).attr('id');
+      console.log(id);
+      $('#uploadForm').val('https://youtu.be/' + id);
+      $('#search-results').addClass('hide');
+      });
+}
 // Search for a specified string.
 function vidSearch() {
   console.log('search fired');
@@ -24,54 +32,63 @@ function vidSearch() {
   var qu = q.substring(0, 4);
   console.log(qu);
   if(qu == 'http' || qu.trim().length == 0){
-    console.log(q);
     $('#search-results').addClass('hide');
-  }else{
-    $('#search-results').removeClass('hide');
-    setTimeout(function(){
-      $('#search-results').empty();
-      var titles = [];
-      var ids = [];
-      var thumbnails = [];
-      var request = gapi.client.youtube.search.list({
-        q : q,
-        part: 'snippet',
-        type: 'video',
-      });
+      }else{
+        setTimeout(function(){
+        $('#search-results').removeClass('hide');
+          $('#search-results').empty();
+          var titles = [];
+          var ids = [];
+          var thumbnails = [];
+        var request = gapi.client.youtube.search.list({
+          q: q,
+          part: 'snippet',
+          type: 'video',
+        });
 
-      request.execute(function(response) {
-        for (var i = 0; i < response.items.length; i++) {
-          titles.push(response.items[i].snippet.title);
-          thumbnails.push(response.items[i].snippet.thumbnails.default.url);
-          ids.push(response.items[i].id.videoId);
-          theTitle = titles[i];
-          theId = ids[i];
-          theThumbnail= thumbnails[i];
 
-          //set the image
-          var listImg = $('<img/>',{
-            src: theThumbnail,
-            class: 'list-img col-sm-4'
-          });
+        request.execute(function(response) {
+          for (var i = 0; i < response.items.length; i++) {
+            titles.push(response.items[i].snippet.title);
+            thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+            ids.push(response.items[i].id.videoId);
+            theTitle = titles[i];
+            theId = ids[i];
+            theThumbnail= thumbnails[i];
 
-          //set the title
-          var listTitle = $('<span/>',{
-            class: 'list-title col-sm-8',
-            html: theTitle
-          });
+            //set the image
+            listImg = $('<img/>',{
+              src: theThumbnail,
+              class: 'list-img col-sm-4'
+            });
 
-          //set the itm
-          var listItem = $('<li/>',{
-            id: theId,
-            class: 'list-item row',
-          });
-          //output the list
-          $('#search-results').append($(listItem).append(listImg).append(listTitle));
-        }
-      });
-    }, 1000);
-  }
-};
+            //set the title
+            listTitle = $('<span/>',{
+              class: 'list-title col-sm-8',
+              html: theTitle
+            });
+
+            //set the itm
+            listItem = $('<li/>', {
+              id: theId,
+              class: 'list-item row',
+            });
+            
+            //output the list
+              jQuery('#search-results').append($(listItem)
+                .append( 
+                  listImg
+                ).append(
+                  listTitle
+                )
+              );
+              $('.list-item').load(searchSelect());
+          };
+        });
+      }, 1000);
+
+    }
+  };
 
 (function(){
   $(".search").submit(function(e) {
@@ -87,10 +104,6 @@ function vidSearch() {
   });
 
   function initialize(){
-    $('.list-item').click(function(){
-      var id = $this.attr('id');
-      console.log(id);
-    })
 
     $(".main").onepage_scroll({
       sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
