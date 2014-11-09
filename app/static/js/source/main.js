@@ -42,16 +42,17 @@ function vidSearch() {
         class: 'list-title',
         html: theTitle
       });
-      listItem = $('<div/>', {
+      listItem = $('<li/>', {
         id: theId,
         class: 'list-item',
-        html: listTitle
       });
       
-        jQuery('#search-results').append( 
-          listImg
-        ).append(
-          listTitle
+        jQuery('#search-results').append($(listItem)
+          .append( 
+            listImg
+          ).append(
+            listTitle
+          )
         );
     };
   });
