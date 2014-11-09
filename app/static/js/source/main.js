@@ -1,3 +1,8 @@
+//Set global vars
+  var titles = [];
+  var ids = [];
+  var thumbnails = [];
+
 //Send google the API key
 function authinit() {
   console.log('authInit firing');
@@ -13,19 +18,56 @@ function handleAPILoaded() {
 
 // Search for a specified string.
 function vidSearch() {
-  debugger;
   console.log('search fired');
   var q = $('#uploadForm').val();
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet',
-    type: 'video',
-  });
+    if( q.indexOf('http') != 0){
+      setTimeout(function(){
+      var request = gapi.client.youtube.search.list({
+        q: q,
+        part: 'snippet',
+        type: 'video',
+      });
 
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
-  });
+
+      request.execute(function(response) {
+        for (var i = 0; i < response.items.length; i++) {
+          titles.push(response.items[i].snippet.title);
+          thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+          ids.push(response.items[i].id.videoId);
+          theTitle = titles[i];
+          theId = ids[i];
+          theThumbnail= thumbnails[i];
+
+          //set the image
+          listImg = $('<img/>',{
+            src: theThumbnail,
+            class: 'list-img col-sm-4'
+          });
+
+          //set the title
+          listTitle = $('<span/>',{
+            class: 'list-title col-sm-8',
+            html: theTitle
+          });
+
+          //set the itm
+          listItem = $('<li/>', {
+            id: theId,
+            class: 'list-item row',
+          });
+
+          //output the list
+            jQuery('#search-results').append($(listItem)
+              .append(
+                listImg
+              ).append(
+                listTitle
+              )
+            );
+        };
+      });
+    }, 1000);
+  };
 }
 
 (function(){
@@ -70,6 +112,11 @@ function vidSearch() {
 
     $(".next").click(function(){
       $(".main").moveDown();
+    });
+
+    $('.selectpicker').selectpicker({
+      style: 'btn-default',
+      size: 4
     });
   }
 })();

@@ -20,19 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Arvo|Lobster|Changa+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/source/app.css" />
   </head>
-
   <body>
-
-    <div class="this form is only here so I could test passing input values to the routes in the request">
-      <form id="frobro">
-        <input type="text" placeholder="youtube" name="youtube" />
-        <input type="text" placeholder="sample" name="sample" />
-        <input type="text" placeholder="note" name=="sample" />
-        <button type="button">Click Me!</button>
-      </form>
-    </div>
-
-
     <div class="main container-fluid">
       <section class="section1">
         <div class="row">
@@ -43,13 +31,13 @@
               Forget to send a Christmas Card? Never got around to writing that smash hit Hanukkah song?<br />
               No Worries...send a JingleGram.
             </p>
+              <p class="search">
 
-              <form name="search" class="search" action="javascript:vidSearch()">
-
-                <input id="uploadForm" type="text" placeholder="youtube url or keyword" />
-              </form>
-
+                <input id="uploadForm" type="text" placeholder="youtube url or keyword" onkeyup="javascript:vidSearch()" />
+              </p>
             <div id="search-container">
+              <ul id="search-results">
+              </ul>
             </div>
           </div>
         </div>
@@ -59,18 +47,36 @@
         </button>
         <footer></footer>
       </section>
-      <section class="section2">
-        <div class="row">
-          <div class="col-sm-12">
-            <h2 class="lobster text-center"><i class="icon-settings"></i> Options</h2>
+        <form id="options">
+        <section class="section2">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2 class="lobster text-center"><i class="icon-santa-1"></i> Options</h2>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6">
-          <h6>How much jingle ya want?</h6>
-        </div>
-        <div class="col-sm-6">
-          <h6>How much bling ya want?</h6>
-        </div>
+          <div class="col-sm-6">
+            <h6>How much jing ya want? <i class=" icon-music2"></i></h6>
+            <select class="selectpicker" name="sample">
+              <option>Tiny Tim</option>
+              <option>Jack Frost</option>
+              <option>Scrooge</option>
+              <option>Abominable</option>
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <h6>How much bling ya want? <i class="icon-snow-2"></i></h6>
+            <select class="selectpicker" name="bling">
+              <option>Silent Night</option>
+              <option>Holy Night</option>
+              <option>Deck the Halls</option>
+              <option>Blizzard</option>
+           </select>
+          </div>
+          <input id="youtube" name="youtube" type="hidden" />
+            <button type="submit" class="btn gram-me">
+              <i class="icon-card-2"></i> Gram Me
+            </button>
+        </form>
       </section>
     </div>
     <footer class="container-fluid">
