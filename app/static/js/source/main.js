@@ -21,6 +21,7 @@ function searchSelect(){
       var id = $(this).attr('id');
       console.log(id);
       $('#uploadForm').val('https://youtu.be/' + id);
+      $('#search-results').addClass('hide');
       });
 }
 // Search for a specified string.
@@ -31,14 +32,10 @@ function vidSearch() {
   var qu = q.substring(0, 4);
   console.log(qu);
   if(qu == 'http' || qu.trim().length == 0){
-    console.log(q);
     $('#search-results').addClass('hide');
-  }else{
-    $('#search-results').removeClass('hide');
-    setTimeout(function(){
-      $('#search-results').empty();
-    }else{
+      }else{
         setTimeout(function(){
+        $('#search-results').removeClass('hide');
           $('#search-results').empty();
           var titles = [];
           var ids = [];
@@ -85,11 +82,11 @@ function vidSearch() {
                   listTitle
                 )
               );
+              $('.list-item').load(searchSelect());
           };
         });
       }, 1000);
-      //pass values
-      setTimeout(function(){searchSelect()}, 1051);
+
     }
   };
 
