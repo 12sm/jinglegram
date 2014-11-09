@@ -1,3 +1,8 @@
+//Set global vars
+  var titles = [];
+  var ids = [];
+  var thumbnails = [];
+
 //Send google the API key
 function authinit() {
     console.log('authInit firing');
@@ -12,7 +17,6 @@ function handleAPILoaded() {
 
 // Search for a specified string.
 function vidSearch() {
-  debugger;
   console.log('search fired');
   var q = $('#uploadForm').val();
   var request = gapi.client.youtube.search.list({
@@ -21,9 +25,35 @@ function vidSearch() {
     type: 'video',
   });
 
+
   request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
+    for (var i = 0; i < response.items.length; i++) {
+      titles.push(response.items[i].snippet.title);
+      thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+      ids.push(response.items[i].id.videoId);
+      theTitle = titles[i];
+      theId = ids[i];
+      theThumbnail= thumbnails[i];
+      listImg = $('<img/>',{
+        src: theThumbnail,
+        class: 'list-img'
+      });
+      listTitle = $('<span/>',{
+        class: 'list-title',
+        html: theTitle
+      });
+      listItem = $('<div/>', {
+        id: theId,
+        class: 'list-item',
+        html: listTitle
+      });
+      
+        jQuery('#search-results').append( 
+          listImg
+        ).append(
+          listTitle
+        );
+    };
   });
 }
 (function(){
