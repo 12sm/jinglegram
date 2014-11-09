@@ -79,10 +79,10 @@ function vidSearch() {
               id: theId,
               class: 'list-item row',
             });
-            
+
             //output the list
               jQuery('#search-results').append($(listItem)
-                .append( 
+                .append(
                   listImg
                 ).append(
                   listTitle
@@ -140,6 +140,3 @@ function vidSearch() {
     });
   }
 })();
-$('.gram-me').click(function(){
-  $("#options").ajaxSubmit({url: '', type: 'post'})
-});

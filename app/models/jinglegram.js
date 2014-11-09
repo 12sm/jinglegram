@@ -22,9 +22,10 @@ Jinglegram.prototype.insert = function(fn){
   });
 };
 
-Jinglegram.findAll = function(fn){
-  Jinglegram.collection.find().toArray(function(err, records){
-    fn(records);
+Jinglegram.findById = function(id, fn){
+  var mongoId = new Mongo.ObjectID(id);
+  Jinglegram.collection.findOne({_id:mongoId}, function(err, record){
+    fn(record);
   });
 };
 

@@ -8,13 +8,19 @@ exports.create = function(req, res){
   console.log(req.body);
   jinglegram = new Jinglegram(req.body);
   jinglegram.insert(function(jinglegram){
-    // res.redirect('/');
   });
+  console.log(jinglegram._id);
+  var url = jinglegram._id.toString();
+  console.log(url);
+  res.redirect(url);
 };
 
 exports.show = function(req, res){
-  Jinglegram.findById(req.params.id, function(album){
-    res.render('albums/show', {album:album, title:album.title});
+  Jinglegram.findById(req.params.id, function(jinglegram){
+    console.log(jinglegram);
+    console.log({jinglegram:jinglegram.youtube});
+    res.render('albums/show', {youtube:jinglegram.youtube, jing:jinglegram.jing, bling:jinglegram.bling, message:jinglegram.message});
+    res.redirect('/');
   });
 };
 
