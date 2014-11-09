@@ -212,7 +212,7 @@ input#uploadForm {
   width: 80%;
   max-width: 1080px;
   margin: 0px auto;
-  background: #999;
+  background: rgba(255,255,255,0.8);
   z-index: 999999999;
   position: relative;
 }
@@ -296,12 +296,22 @@ ul#search-results {
 ul#search-results li {
   text-align: left;
   font-size: 13px;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   margin: 0px;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
+  color:#999;
+=======
 >>>>>>> origin/master
+>>>>>>> FETCH_HEAD
 }
+
+ul#search-results li:hover {
+  cursor:pointer;
+  background:#fff;
+}
+
 .list-img {
   display: inline-block;
   padding: 5px 15px;
