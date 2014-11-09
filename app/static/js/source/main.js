@@ -24,6 +24,12 @@ function searchSelect(){
       $('#search-results').addClass('hide');
       });
 }
+function passVal(){
+  ytvid = $('#uploadForm').val();
+  $('#youtube').val(ytvid);
+  theVal = $('#youtube').val();
+  console.log(theVal);
+}
 // Search for a specified string.
 function vidSearch() {
   console.log('search fired');
@@ -125,6 +131,7 @@ function vidSearch() {
 
     $(".next").click(function(){
       $(".main").moveDown();
+      passVal();
     });
 
     $('.selectpicker').selectpicker({

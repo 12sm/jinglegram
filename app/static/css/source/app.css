@@ -348,3 +348,13 @@ ul#search-results li:hover {
 .list-title {
   padding: 20px 0px;
 }
+
+#message {
+  outline: none;
+  margin-top: 30px;
+  color: #999;
+  min-height: 150px;
+  border-radius: 5px;
+  padding: 15px;
+  font-size:18px;
+}
