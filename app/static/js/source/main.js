@@ -1,6 +1,5 @@
 //Send google the API key
 function authinit() {
-    debugger;
     console.log('authInit firing');
     gapi.client.setApiKey('AIzaSyDHjyZ5OtsbY_6PxkKa_nCu21vAM21H5Ak');
     gapi.client.load('youtube', 'v3').then(handleAPILoaded);
