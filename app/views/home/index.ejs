@@ -49,14 +49,15 @@
       </section>
         <section class="section2">
           <form id="options" method='post', action='/', enctype='multipart/form-data'>
-            <div class="row">
-              <div class="col-sm-12">
-                <h2 class="lobster text-center"><i class="icon-santa-1"></i> Options</h2>
-              </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h2 class="lobster text-center"><i class="icon-santa-1"></i> Options</h2>
             </div>
+          </div>
+          <div class="row">
             <div class="col-sm-6">
               <h6>How much jing ya want? <i class=" icon-music2"></i></h6>
-              <select class="selectpicker" name="sample">
+              <select class="selectpicker" name="jing">
                 <option>Tiny Tim</option>
                 <option>Jack Frost</option>
                 <option>Scrooge</option>
@@ -70,13 +71,18 @@
                 <option>Holy Night</option>
                 <option>Deck the Halls</option>
                 <option>Blizzard</option>
-              </select>
+             </select>
             </div>
-            <input id="youtube" name="youtube" type="hidden" />
+          </div>
+          <div class"row">
+            <h6 class="text-center">Drop the mic <i class="icon-sound"></i></h6>
+            <textarea id="message" name="message" class="message col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">Type a message here...</textarea>
+          </div>
+          <input id="youtube" name="youtube" type="hidden" />
             <button type="submit" class="btn gram-me">
               <i class="icon-card-2"></i> Gram Me
             </button>
-          </form>
+        </form>
         <div class="footer1"></div>
       </section>
     </div>
