@@ -141,5 +141,5 @@ function vidSearch() {
   }
 })();
 $('.gram-me').click(function(){
-  $("#options").ajaxSubmit({url: '../routes/jinglegrams.js', type: 'post'})
+  $("#options").ajaxSubmit({url: '', type: 'post'})
 });
