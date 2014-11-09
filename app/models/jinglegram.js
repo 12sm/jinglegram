@@ -5,7 +5,7 @@ module.exports = Jinglegram;
 var users    = global.jg.db.collection('jinglegrams');
 var Mongo    = require('mongodb');
 
-function User(data){
+function Jinglegram(data){
   this.youtube = data.youtube;
   this.sample  = data.sample;
   this.note    = data.note;
