@@ -10,10 +10,11 @@ exports.index = function(req, res){
 };
 
 exports.create = function(req, res){
-  console.log("the form was submitted dummy")
+  console.log("the form was submitted dummy");
+  console.log(req.body);
   jinglegram = new Jinglegram(req.body);
   jinglegram.insert(function(jinglegram){
-    res.redirect('/');
+    // res.redirect('/');
   });
 };
 

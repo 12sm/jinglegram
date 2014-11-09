@@ -5,10 +5,8 @@ var MongoClient = require('mongodb').MongoClient;
 
 module.exports = function(url, cb){
   MongoClient.connect(url, function(err, db){
-    console.log(url);
-    console.log(db);
     global.jinglegram = db;
     console.log('Express: Database', url);
-    // if(cb){cb();}
+    if(cb){cb();}
   });
 };

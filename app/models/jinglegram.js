@@ -16,14 +16,13 @@ Object.defineProperty(Jinglegram, 'collection', {
 });
 
 Jinglegram.prototype.insert = function(fn){
-  jinglegrams.insert(this, function(err, record){
+  Jinglegram.collection.insert(this, function(err, record){
     fn(record);
   });
-  console.log(jinglegrams);
 };
 
 Jinglegram.findAll = function(fn){
-  jinglegrams.find().toArray(function(err, records){
+  Jinglegram.collection.find().toArray(function(err, records){
     fn(records);
   });
 };
