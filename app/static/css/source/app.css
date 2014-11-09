@@ -216,3 +216,14 @@ input#uploadForm {
   padding: 15px;
   border-radius: 15px;
 }
+
+
+/* SEARCH LIST */
+ul#search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.list-img {
+  display: inline-block;
+  padding: 5px 15px;
+}

@@ -34,19 +34,26 @@ function vidSearch() {
       theTitle = titles[i];
       theId = ids[i];
       theThumbnail= thumbnails[i];
+      
+      //set the image
       listImg = $('<img/>',{
         src: theThumbnail,
         class: 'list-img'
       });
+
+      //set the title
       listTitle = $('<span/>',{
         class: 'list-title',
         html: theTitle
       });
+
+      //set the itm
       listItem = $('<li/>', {
         id: theId,
         class: 'list-item',
       });
       
+      //output the list
         jQuery('#search-results').append($(listItem)
           .append( 
             listImg
