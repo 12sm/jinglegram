@@ -19,9 +19,21 @@
     <link rel="stylesheet" type="text/css" href="css/source/fonts.css" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Arvo|Lobster|Changa+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/source/app.css" />
+    <script>
+      $('#frobro').submit(function(){
+        console.log("great");
+      });
+    </script>
   </head>
 
   <body>
+
+    <form>
+      <input name="frobro" id="uploadForm" type="text" placeholder="youtube" />
+      <input id="uploadForm" type="text" placeholder="sample" />
+      <input id="uploadForm" type="text" placeholder="note" />
+      <button type="button">Click Me!</button>
+    </form>
     <div class="main container-fluid">
       <section class="section1">
         <div class="row">
@@ -32,8 +44,6 @@
               Forget to send a Christmas Card? Never got around to writing that smash hit Hanukkah song?<br />
               No Worries...send a JingleGram.
             </p>
-
-            
               <form name="search" class="search" action="javascript:vidSearch()">
                 <input id="uploadForm" type="text" placeholder="youtube url or keyword" />
               </form>
