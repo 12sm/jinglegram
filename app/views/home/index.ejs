@@ -19,20 +19,15 @@
     <link rel="stylesheet" type="text/css" href="css/source/fonts.css" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Arvo|Lobster|Changa+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/source/app.css" />
-    <script>
-      $('#frobro').submit(function(){
-        console.log("great");
-      });
-    </script>
   </head>
 
   <body>
 
     <div class="this form is only here so I could test passing input values to the routes in the request">
-      <form>
-        <input name="frobro" id="uploadForm" type="text" placeholder="youtube" />
-        <input id="uploadForm" type="text" placeholder="sample" />
-        <input id="uploadForm" type="text" placeholder="note" />
+      <form id="frobro">
+        <input type="text" placeholder="youtube" name="youtube" />
+        <input type="text" placeholder="sample" name="sample" />
+        <input type="text" placeholder="note" name=="sample" />
         <button type="button">Click Me!</button>
       </form>
     </div>

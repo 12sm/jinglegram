@@ -1,22 +1,21 @@
 'use strict';
 
-var dbname     = 'jinglegram';
+var db         = 'jinglegram';
 var express    = require('express');
-var path       = require('path');
-var initMongo  = require('./lib/init-mongo.js');
-var initRoutes = require('./lib/init-routes.js');
 var app        = express();
+var path       = require('path');
+var initRoutes = require('./lib/init-routes.js');
 var port       = 3000;
-
+var url        = 'mongodb://localhost/' + db;
+require('./lib/mongodb.js')(url);
 app.set('views', __dirname, 'views');
 app.set('view engine', 'ejs');
 
 //-------- PIPELINE BEGINS --------//
-app.use(initMongo.connect);
 app.use(initRoutes);
 //app.use(express.favicon());
 app.use(express.static(path.join(__dirname, 'static')));
-app.use(express.bodyParser({limit: '500mb'}));
+app.use(express.bodyParser());
 app.use(express.methodOverride());
 // app.use('/fonts',express.static(path.join(__dirname, 'static/fonts')));
 // app.use('/js',express.static(path.join(__dirname, 'static/js')));
