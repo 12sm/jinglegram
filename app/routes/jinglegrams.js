@@ -1,6 +1,6 @@
 'use strict';
 
-var Jinglegram = require('../models/jinglegram');
+var Jinglegram = require('../models/jinglegram.js');
 var jinglegram;
 
 exports.index = function(req, res){
