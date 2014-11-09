@@ -17,13 +17,6 @@ app.use(initRoutes);
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-<<<<<<< HEAD
-
-//app.use(function (req,res) {
-//  res.render('./views/404.ejs', {url:req.url});
-//});
-=======
->>>>>>> FETCH_HEAD
 app.use(app.router);
 //-------- PIPELINE ENDS --------//
 
