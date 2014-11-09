@@ -66,8 +66,8 @@ function vidSearch() {
             class: 'list-item row',
           });
           //output the list
-          $('#search-results').append($(listItem).append(listImg).append(listTitle);
-        };
+          $('#search-results').append($(listItem).append(listImg).append(listTitle));
+        }
       });
     }, 1000);
   }
