@@ -16,6 +16,13 @@ function handleAPILoaded() {
   console.log('API Loaded');
 }
 
+function searchSelect(){
+  $('.list-item').click(function(){
+      var id = $(this).attr('id');
+      console.log(id);
+      $('#uploadForm').val('https://youtu.be/' + id);
+      });
+}
 // Search for a specified string.
 function vidSearch() {
   console.log('search fired');
@@ -74,6 +81,8 @@ function vidSearch() {
           };
         });
       }, 1000);
+      //pass values
+      setTimeout(function(){searchSelect()}, 1051);
     }
   };
 
@@ -94,10 +103,7 @@ function vidSearch() {
   function initialize(){
 
    
-    $('.list-item').click(function(){
-      var id = $this.attr('id');
-      console.log(id);
-    })
+    
 
        //OnePageScroll
 
