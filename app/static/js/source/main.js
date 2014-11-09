@@ -20,62 +20,59 @@ function handleAPILoaded() {
 function vidSearch() {
   console.log('search fired');
   var q = $('#uploadForm').val();
-   var qu = q.split("", 4);
-    if(  qu[0] == 'http' ){
+  console.log(q);
+  var qu = q.substring(0, 5);
+  console.log(qu);
+  if(  qu == 'http' ){
+    console.log(q);
+    $('#search-results').empty();
+  }else{
+    setTimeout(function(){
       $('#search-results').empty();
-    }else{
-        setTimeout(function(){
-          $('#search-results').empty();
-          var titles = [];
-          var ids = [];
-          var thumbnails = [];
-        var request = gapi.client.youtube.search.list({
-          q: q,
-          part: 'snippet',
-          type: 'video',
-        });
+      var titles = [];
+      var ids = [];
+      var thumbnails = [];
+      var request = gapi.client.youtube.search.list({
+        q : q,
+        part: 'snippet',
+        type: 'video',
+      });
 
+      request.execute(function(response) {
+        for (var i = 0; i < response.items.length; i++) {
+          titles.push(response.items[i].snippet.title);
+          thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+          ids.push(response.items[i].id.videoId);
+          theTitle = titles[i];
+          theId = ids[i];
+          theThumbnail= thumbnails[i];
 
-        request.execute(function(response) {
-          for (var i = 0; i < response.items.length; i++) {
-            titles.push(response.items[i].snippet.title);
-            thumbnails.push(response.items[i].snippet.thumbnails.default.url);
-            ids.push(response.items[i].id.videoId);
-            theTitle = titles[i];
-            theId = ids[i];
-            theThumbnail= thumbnails[i];
+          //set the image
+          var listImg = $('<img/>',{
+            src: theThumbnail,
+            class: 'list-img col-sm-4'
+          });
 
-            //set the image
-            listImg = $('<img/>',{
-              src: theThumbnail,
-              class: 'list-img col-sm-4'
-            });
+          //set the title
+          var listTitle = $('<span/>',{
+            class: 'list-title col-sm-8',
+            html: theTitle
+          });
 
-            //set the title
-            listTitle = $('<span/>',{
-              class: 'list-title col-sm-8',
-              html: theTitle
-            });
-
-            //set the itm
-            listItem = $('<li/>', {
-              id: theId,
-              class: 'list-item row',
-            });
-            
-            //output the list
-              jQuery('#search-results').append($(listItem)
-                .append( 
-                  listImg
-                ).append(
-                  listTitle
-                )
-              );
-          };
-        });
-      }, 1000);
-    }
-  };
+          //set the itm
+          var listItem = $('<li/>',{
+            id: theId,
+            class: 'list-item row',
+          });
+          //output the list
+          $('#search-results').append(listItem);
+          $('#search-results').append(listImg);
+          $('#search-results').append(listTitle);
+        };
+      });
+    }, 1000);
+  }
+};
 
 
 (function(){
@@ -92,15 +89,13 @@ function vidSearch() {
   });
 
   function initialize(){
-<<<<<<< HEAD
-   
+
     $('.list-item').click(function(){
       var id = $this.attr('id');
       console.log(id);
     })
 
        //OnePageScroll
-=======
     $('#frobro').submit(function(){
       console.log("great");
       event.preventDefault();
@@ -109,7 +104,6 @@ function vidSearch() {
     console.log('IIIIIIIIIIIIIIIIIIIIIII');
     //Load Youtube API
     //OnePageScroll
->>>>>>> origin/master
     $(".main").onepage_scroll({
       sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
       easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
