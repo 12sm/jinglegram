@@ -19,50 +19,54 @@ function handleAPILoaded() {
 function vidSearch() {
   console.log('search fired');
   var q = $('#uploadForm').val();
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet',
-    type: 'video',
-  });
-
-
-  request.execute(function(response) {
-    for (var i = 0; i < response.items.length; i++) {
-      titles.push(response.items[i].snippet.title);
-      thumbnails.push(response.items[i].snippet.thumbnails.default.url);
-      ids.push(response.items[i].id.videoId);
-      theTitle = titles[i];
-      theId = ids[i];
-      theThumbnail= thumbnails[i];
-      
-      //set the image
-      listImg = $('<img/>',{
-        src: theThumbnail,
-        class: 'list-img'
+    if( q.indexOf('http') != 0){
+      setTimeout(function(){
+      var request = gapi.client.youtube.search.list({
+        q: q,
+        part: 'snippet',
+        type: 'video',
       });
 
-      //set the title
-      listTitle = $('<span/>',{
-        class: 'list-title',
-        html: theTitle
-      });
 
-      //set the itm
-      listItem = $('<li/>', {
-        id: theId,
-        class: 'list-item',
+      request.execute(function(response) {
+        for (var i = 0; i < response.items.length; i++) {
+          titles.push(response.items[i].snippet.title);
+          thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+          ids.push(response.items[i].id.videoId);
+          theTitle = titles[i];
+          theId = ids[i];
+          theThumbnail= thumbnails[i];
+
+          //set the image
+          listImg = $('<img/>',{
+            src: theThumbnail,
+            class: 'list-img col-sm-4'
+          });
+
+          //set the title
+          listTitle = $('<span/>',{
+            class: 'list-title col-sm-8',
+            html: theTitle
+          });
+
+          //set the itm
+          listItem = $('<li/>', {
+            id: theId,
+            class: 'list-item row',
+          });
+          
+          //output the list
+            jQuery('#search-results').append($(listItem)
+              .append( 
+                listImg
+              ).append(
+                listTitle
+              )
+            );
+        };
       });
-      
-      //output the list
-        jQuery('#search-results').append($(listItem)
-          .append( 
-            listImg
-          ).append(
-            listTitle
-          )
-        );
-    };
-  });
+    }, 1000);
+  };
 }
 (function(){
   $(".search").submit(function(e) {
