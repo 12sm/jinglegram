@@ -14,7 +14,7 @@ module.exports = function(req, res, next){
 };
 
 function load(app, fn){
-  app.get('/', d, function (req, res) {res.render('./views/index.ejs');});
+  app.get('/', d, function (req, res) {res.render('./views/home/index.ejs');});
   app.get('/:id', d, jinglegrams.show);
   app.post('/', d, jinglegrams.create);
   // app.get('/sampleModels', d, sampleModels.index);
@@ -29,6 +29,7 @@ function load(app, fn){
   // app.post('/logout', d, users.logout);
   // app.post('/sampleModels/update/:id', d, sampleModels.update);
   // app.post('/sampleModels/delete/:id', d, sampleModels.remove);
+  app.get('/*', d, function (req, res) {res.render('./views/404.ejs', {url:req.url});});
   console.log('Routes Loaded');
   fn();
 }
