@@ -10,9 +10,8 @@ exports.index = function(req, res){
 };
 
 exports.create = function(req, res){
+  console.log("the form was submitted dummy")
   jinglegram = new Jinglegram(req.body);
-  jinglegram.addCover(req.files.cover.path);
-  jinglegram.makeDirectory();
   jinglegram.insert(function(jinglegram){
     res.redirect('/');
   });

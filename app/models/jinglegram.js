@@ -1,9 +1,7 @@
 'use strict';
 
-module.exports = Jinglegram;
-
-var users    = global.jg.db.collection('jinglegrams');
 var Mongo    = require('mongodb');
+// var jinglegrams = global.jinglegram.collection('jinglegrams');
 
 function Jinglegram(data){
   this.youtube = data.youtube;
@@ -25,3 +23,5 @@ Jinglegram.findAll = function(fn){
     fn(records);
   });
 };
+
+module.exports = Jinglegram;
