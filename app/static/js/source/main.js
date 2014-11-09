@@ -27,8 +27,15 @@ function searchSelect(){
 function vidSearch() {
   console.log('search fired');
   var q = $('#uploadForm').val();
-   var qu = q.split("", 4);
-    if(  qu[0] == 'http' ){
+  console.log(q);
+  var qu = q.substring(0, 4);
+  console.log(qu);
+  if(qu == 'http' || qu.trim().length == 0){
+    console.log(q);
+    $('#search-results').addClass('hide');
+  }else{
+    $('#search-results').removeClass('hide');
+    setTimeout(function(){
       $('#search-results').empty();
     }else{
         setTimeout(function(){
@@ -86,7 +93,6 @@ function vidSearch() {
     }
   };
 
-
 (function(){
   $(".search").submit(function(e) {
     e.preventDefault();
@@ -101,11 +107,6 @@ function vidSearch() {
   });
 
   function initialize(){
-
-   
-    
-
-       //OnePageScroll
 
     $(".main").onepage_scroll({
       sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
