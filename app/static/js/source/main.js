@@ -19,55 +19,63 @@ function handleAPILoaded() {
 function vidSearch() {
   console.log('search fired');
   var q = $('#uploadForm').val();
-    if( q.indexOf('http') != 0){
-      setTimeout(function(){
-      var request = gapi.client.youtube.search.list({
-        q: q,
-        part: 'snippet',
-        type: 'video',
-      });
+   var qu = q.split("", 4);
+    if(  qu[0] == 'http' ){
+      $('#search-results').empty();
+    }else{
+        setTimeout(function(){
+          $('#search-results').empty();
+          var titles = [];
+          var ids = [];
+          var thumbnails = [];
+        var request = gapi.client.youtube.search.list({
+          q: q,
+          part: 'snippet',
+          type: 'video',
+        });
 
 
-      request.execute(function(response) {
-        for (var i = 0; i < response.items.length; i++) {
-          titles.push(response.items[i].snippet.title);
-          thumbnails.push(response.items[i].snippet.thumbnails.default.url);
-          ids.push(response.items[i].id.videoId);
-          theTitle = titles[i];
-          theId = ids[i];
-          theThumbnail= thumbnails[i];
+        request.execute(function(response) {
+          for (var i = 0; i < response.items.length; i++) {
+            titles.push(response.items[i].snippet.title);
+            thumbnails.push(response.items[i].snippet.thumbnails.default.url);
+            ids.push(response.items[i].id.videoId);
+            theTitle = titles[i];
+            theId = ids[i];
+            theThumbnail= thumbnails[i];
 
-          //set the image
-          listImg = $('<img/>',{
-            src: theThumbnail,
-            class: 'list-img col-sm-4'
-          });
+            //set the image
+            listImg = $('<img/>',{
+              src: theThumbnail,
+              class: 'list-img col-sm-4'
+            });
 
-          //set the title
-          listTitle = $('<span/>',{
-            class: 'list-title col-sm-8',
-            html: theTitle
-          });
+            //set the title
+            listTitle = $('<span/>',{
+              class: 'list-title col-sm-8',
+              html: theTitle
+            });
 
-          //set the itm
-          listItem = $('<li/>', {
-            id: theId,
-            class: 'list-item row',
-          });
-          
-          //output the list
-            jQuery('#search-results').append($(listItem)
-              .append( 
-                listImg
-              ).append(
-                listTitle
-              )
-            );
-        };
-      });
-    }, 1000);
+            //set the itm
+            listItem = $('<li/>', {
+              id: theId,
+              class: 'list-item row',
+            });
+            
+            //output the list
+              jQuery('#search-results').append($(listItem)
+                .append( 
+                  listImg
+                ).append(
+                  listTitle
+                )
+              );
+          };
+        });
+      }, 1000);
+    }
   };
-}
+
 (function(){
   $(".search").submit(function(e) {
     e.preventDefault();
@@ -78,7 +86,12 @@ function vidSearch() {
   $(document).ready(initialize);
 
   function initialize(){
-    //Load Youtube API
+   
+    $('.list-item').click(function(){
+      var id = $this.attr('id');
+      console.log(id);
+    })
+
        //OnePageScroll
     $(".main").onepage_scroll({
        sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
