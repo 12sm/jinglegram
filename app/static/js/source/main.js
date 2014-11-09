@@ -39,6 +39,7 @@ function vidSearch() {
   console.log(qu);
   if(qu == 'http' || qu.trim().length == 0){
     $('#search-results').addClass('hide');
+    $('#search-results').empty();
       }else{
         setTimeout(function(){
         $('#search-results').removeClass('hide');
