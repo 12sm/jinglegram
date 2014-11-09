@@ -141,6 +141,4 @@ function vidSearch() {
     });
   }
 })();
-$('.gram-me').click(function(){
-  $("#options").ajaxSubmit({url: '', type: 'post'})
-});
+
