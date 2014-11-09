@@ -21,12 +21,13 @@ function vidSearch() {
   console.log('search fired');
   var q = $('#uploadForm').val();
   console.log(q);
-  var qu = q.substring(0, 5);
+  var qu = q.substring(0, 4);
   console.log(qu);
   if(  qu == 'http' ){
     console.log(q);
-    $('#search-results').empty();
+    $('#search-results').addClass('hide');
   }else{
+    $('#search-results').removeClass('hide');
     setTimeout(function(){
       $('#search-results').empty();
       var titles = [];
@@ -65,9 +66,7 @@ function vidSearch() {
             class: 'list-item row',
           });
           //output the list
-          $('#search-results').append(listItem);
-          $('#search-results').append(listImg);
-          $('#search-results').append(listTitle);
+          $('#search-results').append($(listItem).append(listImg).append(listTitle);
         };
       });
     }, 1000);
@@ -95,14 +94,6 @@ function vidSearch() {
       console.log(id);
     })
 
-       //OnePageScroll
-    $('#frobro').submit(function(){
-      console.log("great");
-      event.preventDefault();
-    });
-
-    console.log('IIIIIIIIIIIIIIIIIIIIIII');
-    //Load Youtube API
     //OnePageScroll
     $(".main").onepage_scroll({
       sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
