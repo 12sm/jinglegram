@@ -23,7 +23,7 @@ function vidSearch() {
   console.log(q);
   var qu = q.substring(0, 4);
   console.log(qu);
-  if(  qu == 'http' ){
+  if(qu == 'http' || qu.trim().length == 0){
     console.log(q);
     $('#search-results').addClass('hide');
   }else{

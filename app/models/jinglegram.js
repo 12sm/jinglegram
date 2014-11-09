@@ -1,7 +1,6 @@
 'use strict';
 
-var Mongo    = require('mongodb');
-// var jinglegrams = global.jinglegram.collection('jinglegrams');
+var Mongo = require('mongodb');
 
 function Jinglegram(data){
   this.youtube = data.youtube;
@@ -12,10 +11,15 @@ function Jinglegram(data){
   }
 }
 
+Object.defineProperty(Jinglegram, 'collection', {
+  get: function(){return global.jinglegram.collection('jinglegrams');}
+});
+
 Jinglegram.prototype.insert = function(fn){
   jinglegrams.insert(this, function(err, record){
     fn(record);
   });
+  console.log(jinglegrams);
 };
 
 Jinglegram.findAll = function(fn){
