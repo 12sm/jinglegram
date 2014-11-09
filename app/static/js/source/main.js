@@ -60,6 +60,11 @@ function vidSearch() {
       $(".main").moveDown();
     });
 
+    $('.selectpicker').selectpicker({
+      style: 'btn-default',
+      size: 4
+    });
+
   }
 //call API
 

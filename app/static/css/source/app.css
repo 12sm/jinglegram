@@ -95,7 +95,7 @@ h6 {font-size:2em;}
 .lato {font-family: 'Lato', sans-serif;}
 .arvo {font-family: 'Arvo', serif;}
 .lobster {font-family: 'Lobster', cursive;}
-.open {font-family: 'Open Sans', sans-serif;}
+.opensans {font-family: 'Open Sans', sans-serif;}
 
 .col {
   max-width: 1170px;
@@ -193,4 +193,26 @@ input#uploadForm {
   font-size: 30px;
   z-index: 99999;
   color: #999;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 80%!important;
+  max-width: 480px!important;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li {
+  position: relative;
+  padding: 0px 0px;
+  font-size: 40px;
+}
+
+.dropdown-toggle {
+  height: 70px;
+  font-size: 36px;
+}
+
+.gram-me {
+  font-size: 45px;
+  padding: 15px;
+  border-radius: 15px;
 }
