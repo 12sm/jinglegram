@@ -5,12 +5,12 @@
       ids        = [],
       thumbnails = [],
       request    = {},
-      req, requ, theVid, theURL,
+      req, requ, theVid, ytURL,
       i, listImg, listItem, listTitle,
       id, theTitle, theThumbnail, theId;
 
   $(document).ready(initialize);
-  
+
   function initialize(){
     $('#uploadForm').keyup(vidSearch);
     // $('.next').click(moveDown);
@@ -38,9 +38,9 @@
   function searchVid(){
     prepSearch();
     request = gapi.client.youtube.search.list({
-      q    : req,
-      part : 'snippet',
-      type : 'video'
+      q     : req,
+      part  : 'snippet',
+      type  : 'video'
     });
     request.then(function(response){
       for (i = 0; i < 5; i++) {
@@ -65,20 +65,20 @@
     theTitle     = titles[i];
     theId        = ids[i];
     theThumbnail = thumbnails[i];
-    listImg   = $('<img/>', {src: theThumbnail, class:'list-img col-sm-4'});
-    listTitle = $('<span/>', {html: theTitle, class:'list-title col-sm-8'});
-    listItem  = $('<li/>', {id: theId, class:'list-item row'});
+    listImg      = $('<img/>',  {src: theThumbnail, class:'list-img col-sm-4'});
+    listTitle    = $('<span/>', {html: theTitle, class:'list-title col-sm-8'});
+    listItem     = $('<li/>',   {id: theId, class:'list-item row'});
     $('#search-results').append($(listItem).append(listImg).append(listTitle));
   }
 
   function searchSelect(){
     $('.list-item').click(function(){
       id = $(this).attr('id');
-      theURL = 'https://youtu.be/' + id;
-      $('#youtube').val('https://youtu.be/' + id);
+      ytURL = 'https://youtu.be/' + id;
+      $('#youtube').val(ytURL);
       theVid = $('#youtube').val();
-      console.log(theVid);
       $(".main").moveDown();
+      console.log(theVid);
     });
   }
 
