@@ -13,10 +13,18 @@
 
   function initialize(){
     $('#uploadForm').keyup(vidSearch);
-    // $('.next').click(moveDown);
+    $('.list-item').click(searchSelect);
     $('.selectpicker').selectpicker({style:'btn-default', size:4});
     $('.search').submit(function(e) {e.preventDefault();});
     onePageScroll();
+  }
+
+  document.onkeydown = function(e){
+    e = e || window.event;
+    var key = e.which || e.keyCode;
+    if(key == 13){
+      searchSelect();
+    }
   }
 
   function vidSearch(){
@@ -49,7 +57,6 @@
         ids.push(response.result.items[i].id.videoId);
         showResults();
       };
-      $('.list-item').load(searchSelect());
     });
   }
 
@@ -72,19 +79,13 @@
   }
 
   function searchSelect(){
-    $('.list-item').click(function(){
-      id = $(this).attr('id');
-      ytURL = 'https://youtu.be/' + id;
-      $('#youtube').val(ytURL);
-      theVid = $('#youtube').val();
-      $(".main").moveDown();
-      console.log(theVid);
-    });
+    id = $(this).attr('id');
+    ytURL = 'https://youtu.be/' + id;
+    $('#youtube').val(ytURL);
+    theVid = $('#youtube').val();
+    $(".main").moveDown();
+    console.log(theVid);
   }
-
-  // function moveDown(){
-  //   $(".main").moveDown();
-  // }
 
   function onePageScroll(){
     $(".main").onepage_scroll({
