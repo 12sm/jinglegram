@@ -11,7 +11,7 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/remix.js"></script>
     <script src="js/source/main.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=authinit"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
     <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/onepagescroll.css" />
@@ -32,7 +32,7 @@
               No Worries...send a JingleGram.
             </p>
               <p class="search center">
-                <input id="uploadForm" type="text" placeholder="youtube url or keyword" onkeyup="javascript:vidSearch()" />
+                <input id="uploadForm" type="text" placeholder="youtube url or keyword" />
               </p>
             <div id="search-container">
               <ul id="search-results">
@@ -76,7 +76,7 @@
           </div>
           <div class"row">
             <h6 class="text-center">Drop the mic <i class="icon-sound"></i></h6>
-            <textarea id="message" name="message" class="message col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">Type a message here...</textarea>
+            <textarea id="message" name="message" class="message col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1" placeholder="Type a message here..."></textarea>
           </div>
           <input id="youtube" name="youtube" type="hidden" />
             <button type="submit" class="btn gram-me">
