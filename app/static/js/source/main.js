@@ -1,11 +1,11 @@
 (function($){
   'use strict';
 
-  var titles     = [],
-      ids        = [],
-      thumbnails = [],
+  var ids        = [],
+      titles     = [],
       request    = {},
-      req, requ, theVid, ytURL,
+      thumbnails = [],
+      req, requ, theVid, ytURL, key,
       i, listImg, listItem, listTitle,
       id, theTitle, theThumbnail, theId;
 
@@ -13,7 +13,6 @@
 
   function initialize(){
     $('#uploadForm').keyup(vidSearch);
-    $('.list-item').click(searchSelect);
     $('.selectpicker').selectpicker({style:'btn-default', size:4});
     $('.search').submit(function(e) {e.preventDefault();});
     onePageScroll();
@@ -21,7 +20,7 @@
 
   document.onkeydown = function(e){
     e = e || window.event;
-    var key = e.which || e.keyCode;
+    key = e.which || e.keyCode;
     if(key == 13){
       searchSelect();
     }
@@ -63,19 +62,20 @@
   function prepSearch(){
     $('#search-results').removeClass('hide');
     $('#search-results').empty();
-    titles      = [];
-    ids         = [];
-    thumbnails  = [];
+    titles     = [];
+    ids        = [];
+    thumbnails = [];
   }
 
   function showResults(){
-    theTitle     = titles[i];
     theId        = ids[i];
+    theTitle     = titles[i];
     theThumbnail = thumbnails[i];
-    listImg      = $('<img/>',  {src: theThumbnail, class:'list-img col-sm-4'});
-    listTitle    = $('<span/>', {html: theTitle, class:'list-title col-sm-8'});
-    listItem     = $('<li/>',   {id: theId, class:'list-item row'});
+    listItem     = $('<li/>',   {id   : theId,        class : 'list-item row'});
+    listImg      = $('<img/>',  {src  : theThumbnail, class : 'list-img col-sm-4'});
+    listTitle    = $('<span/>', {html : theTitle,     class : 'list-title col-sm-8'});
     $('#search-results').append($(listItem).append(listImg).append(listTitle));
+    $('.list-item').click(searchSelect);
   }
 
   function searchSelect(){

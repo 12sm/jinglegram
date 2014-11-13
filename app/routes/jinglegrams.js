@@ -19,8 +19,8 @@ exports.show = function(req, res){
   Jinglegram.findById(req.params.id, function(jinglegram){
     console.log(jinglegram);
     console.log({jinglegram:jinglegram.youtube});
-    // res.render('albums/show', {youtube:jinglegram.youtube, jing:jinglegram.jing, bling:jinglegram.bling, message:jinglegram.message});
-    res.redirect('/');
+    res.render("views/jingle.ejs", {youtube:jinglegram.youtube, jing:jinglegram.jing, bling:jinglegram.bling, message:jinglegram.message});
+    // res.redirect('/');
   });
 };
 
