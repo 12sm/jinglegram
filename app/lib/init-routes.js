@@ -15,6 +15,7 @@ module.exports = function(req, res, next){
 
 function load(app, fn){
   app.get('/', d, function (req, res) {res.render('./views/home/index.ejs');});
+  app.get('/jingle', d, function (req, res) {res.render('./views/jingle.ejs');});
   app.get('/:id', d, jinglegrams.show);
   app.post('/', d, jinglegrams.create);
   // app.get('/sampleModels', d, sampleModels.index);
