@@ -29,29 +29,48 @@
     <h6 class="hide" id="message"><%=message%></h6>
     <div class="main container-fluid">
       <section class="section1">
-
-        <div class="row">
-          <div class="col-sm-3">
+        <div class="row col">
+          <div class="col-sm-3 col-sm-offset-1">
             <h1 class="lobster small-logo"><i class="icon-sleigh-bell"></i>JingleGram</h1>
           </div>
-          <div class="col-sm-5"></div>
-          <div class="col-sm-4 short-top-description">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-5 col-sm-offset-1 short-top-description">
             <p class="desc">
-              JingleGram turns any Youtube Video into a Holiday spectacular.<br />
-              Forget to send a Christmas Card? Never got around to writing that smash hit Hanukkah song?<br />
-              No Worries...send a JingleGram.
+              JingleGram turns any Youtube Video into a Holiday spectacular.
             </p>
+<<<<<<< HEAD
+=======
           </div>
         </div>
 
-        <div class="row">
+        <div class="row col video-row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="videoEmbed" id="youtube"><%=youtube%></div>
+>>>>>>> FETCH_HEAD
+          </div>
+        </div>
+
+        <div class="row col gram-row">
+          <div class="col-sm-10 col-sm-offset-1 gram-background">
+            <div class="row">
+              <div class="col-sm-7 gram-message">
+                <h2>A Message:</h2>
+                <p>Lorem ipsum dolor sit amet, cum cu primis facilisis reprehendunt, usu ad choro singulis expetenda. Te accumsan appareat vel, at usu elit elitr nonumy. Te duo affert iudico lobortis, mei enim virtute ea, usu no tacimates corrumpit. Eripuit rationibus has no, quo in impetus recusabo liberavisse.</p> 
+              </div>
+              <div class="col-sm-5"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row col">
           <div class="col-sm-12">
             <div class="videoEmbed" id="player"></div>
             <button onClick="player.play(0, remixed);">Play!</button>
             <button onClick="player.stop();">Stop!</button>
           </div>
         </div>
-
       </section>
     </div>
     <footer class="container-fluid">
