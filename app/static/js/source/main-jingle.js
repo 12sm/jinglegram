@@ -1,8 +1,12 @@
+(function($){
+  'use strict';
+
 // declare remix vars
 var apiKey = 'TRZJMRXITQGIFF6LK';
 var trackID = 'TRCYWPQ139279B3308';
 var trackURL = '../../audio/katie.mp3'
 var jingleURL = '../../audio/jinglebell_hit-f.mp3'
+var theUpload = ''
 
 var context;
 var jingleBuffer;
@@ -184,9 +188,22 @@ function jingleRemix() {
 }
 
 function youtubeEmbed() {
-  $('.videoEmbed').html(function(i, html) {
-    return html.replace(/(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g, '<iframe width="200" height="100" src="http://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>').replace(/(?:http:\/\/)?(?:www\.)?(?:vimeo\.com)\/(.+)/g, '<iframe src="//player.vimeo.com/video/$1" width="200" height="100" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
-  });
+
+  function getId(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match&&match[7].length==11){
+        return match[7];
+    }else{
+        console.log("Url incorrecta");
+    }
+}
+
+  var myId = getId(document.getElementById("youtube").innerHTML);
+
+  var myCode = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + myId + '?rel=0&autoplay=1" frameborder="0" volume="0" allowfullscreen></iframe>';
+
+  $('.videoEmbed').html(myCode)
 }
 
 function jingleInit() {
@@ -199,4 +216,6 @@ function jingleInit() {
   console.log(document.getElementById("message").innerHTML);
 }
 
-window.onload = jingleInit;
+$(document).ready(jingleInit);
+
+})(jQuery);
