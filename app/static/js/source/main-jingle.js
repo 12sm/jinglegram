@@ -1,6 +1,6 @@
 // declare remix vars
 var apiKey = 'TRZJMRXITQGIFF6LK';
-var trackID = 'TRACK-ID-HERE';
+var trackID = 'TRCYWPQ139279B3308';
 var trackURL = '../../audio/katie.mp3'
 var jingleURL = '../../audio/jinglebell_hit-f.mp3'
 
@@ -33,10 +33,10 @@ var windowHalfY = window.innerHeight / 2;
 
 var particles = [];
 var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
-particleImage.src = '../../img/ParticlPeSmoke.png';
+particleImage.src = '../../img/ParticleSmoke.png';
 
 
-function snow3d() {
+/*function snow3d() {
 
   	container = document.createElement('div');
   	document.body.appendChild(container);
@@ -128,12 +128,16 @@ function snow3d() {
 
 
   }
-}
+} */
 
 
 
 
 function jingleRemix() {
+
+    theUpload = $.post("http://developer.echonest.com/api/v4/track/upload?api_key=TRZJMRXITQGIFF6LK&filetype=mp3","../../audio/jinglebell_hit-f.mp3");
+    console.log(theUpload)
+
     var contextFunction = window.webkitAudioContext || window.AudioContext;
     if (contextFunction === undefined) {
         $("#info").text("Sorry, this app needs advanced web audio. Your browser doesn't"
