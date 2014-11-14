@@ -3,20 +3,29 @@
 var Jinglegram = require('../models/jinglegram.js');
 var jinglegram;
 
+exports.index = function(req, res){
+  if(req.query.jingle){
+    exports.show(req, res);
+    console.log(req.query.jingle);
+    console.log("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+  }else{
+    res.render('./views/home/index.ejs');
+  }
+};
+
 exports.create = function(req, res){
   console.log("the form was submitted dummy");
   console.log(req.body);
   jinglegram = new Jinglegram(req.body);
-  jinglegram.insert(function(jinglegram){
-  });
+  jinglegram.insert(function(jinglegram){});
   console.log(jinglegram._id);
-  var url = jinglegram._id.toString();
+  var url = '?jingle=' + jinglegram._id.toString();
   console.log(url);
   res.redirect(url);
 };
 
 exports.show = function(req, res){
-  Jinglegram.findById(req.params.id, function(jinglegram){
+  Jinglegram.findById(req.query.jingle, function(jinglegram){
     console.log(jinglegram);
     console.log({jinglegram:jinglegram.youtube});
     res.render("views/jingle.ejs", {youtube:jinglegram.youtube, jing:jinglegram.jing, bling:jinglegram.bling, message:jinglegram.message});
@@ -24,12 +33,6 @@ exports.show = function(req, res){
   });
 };
 
-// exports.index = function(req, res){
-//   Jinglegram.findAll(function(jinglegrams){
-//     res.render('jinglegrams/index', {title: 'Showing All Jinglegrams', jinglegrams:jinglegrams});
-//   });
-// };
-//
 // exports.create = function(req, res){
 //   album = new Album(req.body);
 //   album.addCover(req.files.cover.path);
