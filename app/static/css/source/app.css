@@ -360,9 +360,15 @@ ul#search-results li:hover {
 }
 
 
-/* SINGLE JINGLE PAGE */
+/* SINGLE JINGLE PAGE... DINGLE */
 
 h1.small-logo {
-font-size: 40px;
-text-align: left;
+  font-size: 40px;
+  text-align: left;
+}
+
+body.jingle .desc {
+  margin: 45px 0px;
+  font-size: 13px;
+  text-align: right;
 }
