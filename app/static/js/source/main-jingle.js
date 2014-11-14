@@ -135,7 +135,9 @@ particleImage.src = '../../img/ParticleSmoke.png';
 } */
 
 
-
+function thesnowstorm() {
+  snowStorm.resume();
+}
 
 function jingleRemix() {
 
@@ -210,7 +212,8 @@ function youtubeEmbed() {
 function jingleInit() {
   jingleRemix();
   youtubeEmbed();
-  snow3d();
+  thesnowstorm();
+//  snow3d();
   console.log(document.getElementById("youtube").innerHTML);
   console.log(document.getElementById("jing").innerHTML);
   console.log(document.getElementById("bling").innerHTML);
