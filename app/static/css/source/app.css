@@ -358,3 +358,11 @@ ul#search-results li:hover {
   padding: 15px;
   font-size:18px;
 }
+
+
+/* SINGLE JINGLE PAGE */
+
+h1.small-logo {
+font-size: 40px;
+text-align: left;
+}
