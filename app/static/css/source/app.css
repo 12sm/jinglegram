@@ -372,3 +372,8 @@ body.jingle .desc {
   font-size: 13px;
   text-align: right;
 }
+
+body.jingle .container-fluid {
+padding-right: 0px;
+padding-left: 0px;
+}
