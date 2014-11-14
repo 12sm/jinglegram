@@ -182,6 +182,10 @@ function jingleRemix() {
 function jingleInit() {
   jingleRemix();
   snow3d();
+  console.log(document.getElementById("youtube").innerHTML);
+  console.log(document.getElementById("jing").innerHTML);
+  console.log(document.getElementById("bling").innerHTML);
+  console.log(document.getElementById("message").innerHTML);
 }
 
 window.onload = jingleInit;

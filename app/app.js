@@ -18,26 +18,19 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-//-------- PIPELINE ENDS --------//
-
 app.use(function(req, res, next){
   res.status(404);
-
-  // respond with html page
   if (req.accepts('html')) {
     res.render('./views/404', { url: req.url });
     return;
   }
-
-  // respond with json
   if (req.accepts('json')) {
     res.send({ error: 'Not found' });
     return;
   }
-
-  // default to plain-text. send()
   res.type('txt').send('Not found');
 });
+//-------- PIPELINE ENDS --------//
 
 var server = require('http').createServer(app);
 server.listen(port, function(){

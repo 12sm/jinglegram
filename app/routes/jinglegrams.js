@@ -7,7 +7,6 @@ exports.index = function(req, res){
   if(req.query.jingle){
     exports.show(req, res);
     console.log(req.query.jingle);
-    console.log("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
   }else{
     res.render('./views/home/index.ejs');
   }
@@ -29,7 +28,6 @@ exports.show = function(req, res){
     console.log(jinglegram);
     console.log({jinglegram:jinglegram.youtube});
     res.render("views/jingle.ejs", {youtube:jinglegram.youtube, jing:jinglegram.jing, bling:jinglegram.bling, message:jinglegram.message});
-    // res.redirect('/');
   });
 };
 
