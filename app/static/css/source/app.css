@@ -420,6 +420,6 @@ body.jingle .section1 {
 }
 
 .gram-message {
-  margin: 50px;
+  padding: 50px;
   border-right: 2px solid #B8E7E8;
 }
