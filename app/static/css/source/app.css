@@ -363,7 +363,6 @@ ul#search-results li:hover {
 /* SINGLE JINGLE PAGE... DINGLE */
 
 body.jingle {
-  overflow:scroll;
   background: #62c8c8; /* Old browsers */
   background: -moz-linear-gradient(top,  #62c8c8 0%, #089693 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c8c8), color-stop(100%,#089693)); /* Chrome,Safari4+ */
@@ -389,6 +388,17 @@ body.jingle .desc {
 body.jingle .container-fluid {
 padding-right: 0px;
 padding-left: 0px;
+}
+
+body.jingle .section1 {
+  background: #62c8c8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #62c8c8 0%, #089693 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62c8c8), color-stop(100%,#089693)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #62c8c8 0%,#089693 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #62c8c8 0%,#089693 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #62c8c8 0%,#089693 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #62c8c8 0%,#089693 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c8c8', endColorstr='#089693',GradientType=0 ); /* IE6-9 */
 }
 
 .gram-background {
