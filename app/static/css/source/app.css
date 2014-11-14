@@ -423,3 +423,11 @@ body.jingle .section1 {
   padding: 50px;
   border-right: 2px solid #B8E7E8;
 }
+
+.stamp-side {
+  padding-top: 50px;
+}
+
+.video-box.col-sm-10.col-sm-offset-1 {
+  padding: 0;
+}
