@@ -441,7 +441,7 @@ body.jingle .section1 {
   color: #000;
   background: #FFFFFF;
   margin-top:20px;
-  transition:background .2s ease;
+  transition:background .2s ease, color .2s ease;
 }
 
 .make-your-own {
@@ -454,5 +454,6 @@ body.jingle .section1 {
 
 .share-gram:hover,
 .make-your-own:hover {
-background: rgb(201, 249, 61);
+  background: rgb(229, 88, 88);
+  color:#FFF;
 }
