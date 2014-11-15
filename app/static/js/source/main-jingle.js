@@ -203,7 +203,7 @@ function youtubeEmbed() {
 
   var myId = getId(document.getElementById("youtube").innerHTML);
 
-  var myCode = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + myId + '?rel=0&autoplay=1" frameborder="0" volume="0" allowfullscreen></iframe>';
+  var myCode = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + myId + '?rel=0&autoplay=1&enablejsapi=1" frameborder="0" volume="0" allowfullscreen></iframe>';
 
   $('.videoEmbed').html(myCode)
   $(".videoEmbed").fitVids();
