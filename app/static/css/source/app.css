@@ -400,6 +400,7 @@ body.jingle .section1 {
   background: -ms-linear-gradient(top,  #62c8c8 0%,#089693 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #62c8c8 0%,#089693 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c8c8', endColorstr='#089693',GradientType=0 ); /* IE6-9 */
+  height: auto;
 }
 
 .gram-background {
