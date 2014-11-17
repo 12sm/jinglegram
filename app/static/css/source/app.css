@@ -405,6 +405,7 @@ body.jingle .section1 {
 
 .gram-background {
   background: rgba(181, 239, 238, .3);
+  padding-top: 50px;
 }
 
 .gram-message h2 {
@@ -421,12 +422,12 @@ body.jingle .section1 {
 }
 
 .gram-message {
-  padding: 50px;
+  padding:0px 50px 50px 50px;
   border-right: 2px solid #B8E7E8;
 }
 
 .stamp-side {
-  padding:50px 0px;
+  padding: 0px 50px;
 }
 
 .video-box.col-sm-10.col-sm-offset-1 {
