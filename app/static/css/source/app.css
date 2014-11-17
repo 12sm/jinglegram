@@ -440,17 +440,19 @@ body.jingle .section1 {
   width: auto;
   z-index: 99999;
   color: #000;
-  background: #FFFFFF;
+
   margin-top:20px;
   transition:background .2s ease, color .2s ease;
 }
 
 .make-your-own {
-  color:#851a30;
+color: #FFFFFF;
+background: rgb(87, 207, 148);
 }
 
 .share-gram {
   color:#2cb2b1;
+  background: #FFFFFF;
 }
 
 .share-gram:hover,
