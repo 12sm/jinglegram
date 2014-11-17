@@ -473,6 +473,34 @@ footer p a {
 
 @media (max-width: 767px) {
 
+h1.small-logo {
+font-size: 60px;
+text-align: center;
+}
+
+body.jingle .desc {
+margin: 15px 0px;
+font-size: 16px;
+text-align: center;
+}
+
+.video-row, .gram-row {
+padding: 0px 10px;
+}
+
+.gram-message h2 {
+font-size: 20px;
+}
+
+.gram-message {
+padding: 20px;
+border-right: 1px solid #B8E7E8;
+}
+
+.stamp-side {
+padding: 20px 10px;
+}
+
 .make-your-own, .share-gram {
 font-size: 13px;
 width: 100%;
