@@ -319,7 +319,7 @@ input#uploadForm {
 
 /* SEARCH LIST */
 ul#search-results {
-  max-height: 300px;
+  max-height: 236px;
   width: 100%;
   overflow-y: auto;
   margin: 0px;
