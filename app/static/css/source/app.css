@@ -446,8 +446,8 @@ body.jingle .section1 {
 }
 
 .make-your-own {
-color: #FFFFFF;
-background: rgb(87, 207, 148);
+  color: #FFFFFF;
+  background: rgb(87, 207, 148);
 }
 
 .share-gram {
@@ -459,4 +459,13 @@ background: rgb(87, 207, 148);
 .make-your-own:hover {
   background: rgb(229, 88, 88);
   color:#FFF;
+}
+
+footer p {
+  font-size: 13px;
+  margin-top: 100px;
+}
+
+footer p a {
+  color: #C6E7DF;
 }

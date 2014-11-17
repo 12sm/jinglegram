@@ -32,41 +32,41 @@
     <div class="main container-fluid">
       <section class="section1">
         <div class="row col">
-          <div class="col-sm-3 col-sm-offset-1">
+          <div class="col-sm-3 col-xs-12 col-sm-offset-1">
             <h1 class="lobster small-logo"><i class="icon-sleigh-bell"></i>JingleGram</h1>
           </div>
           <div class="col-sm-1"></div>
-          <div class="col-sm-5 col-sm-offset-1 short-top-description">
+          <div class="col-sm-5 col-xs-12 col-sm-offset-1 short-top-description">
             <p class="desc">
               JingleGram turns any Youtube Video into a Holiday spectacular.
             </p>
           </div>
         </div>
         <div class="row col video-row">
-          <div class="col-sm-10 col-sm-offset-1 video-box">
+          <div class="col-sm-10 col-sm-offset-1 col-xs-12 video-box">
             <div class="videoEmbed" id="youtube"><%=youtube%></div>
           </div>
         </div>
         <div class="row col gram-row">
-          <div class="col-sm-10 col-sm-offset-1 gram-background">
+          <div class="col-sm-10 col-sm-offset-1 col-xs-12 gram-background">
             <div class="row">
-              <div class="col-sm-7 gram-message">
+              <div class="col-sm-7 col-xs-8 gram-message">
                 <h2>A Message:</h2>
                 <p><%=message%></p>
               </div>
-              <div class="col-sm-5 stamp-side">
+              <div class="col-sm-5 col-xs-4 stamp-side">
                   <img src="../../img/stamp.png" />
               </div>
             </div>
           </div>
         </div>
         <div class="row col">
-          <div class="col-sm-5 col-sm-offset-1">
+          <div class="col-sm-5 col-sm-offset-1 col-xs-6">
             <button type="submit" class="btn share-gram">
               <i class="icon-card-2"></i> Share your 'Gram
             </button>
           </div>
-          <div class="col-sm-5">
+          <div class="col-sm-5 col-xs-6">
             <button type="submit" class="btn make-your-own">
               <i class="icon-card-2"></i> Make your own!
             </button>
@@ -74,21 +74,19 @@
         </div>
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 col-xs-12">
             <button onClick="player.play(0, remixed);">Play!</button>
             <button onClick="player.stop();">Stop!</button>
           </div>
         </div>
 
         <footer>
-          <div class="row">
-            <div class="col-sm-12">
-              <p>
-                Icons made by Freepik, Dave Gandy, Icons8 from
+          <div class="row col">
+            <div class="col-sm-12 col-xs-12">
+              <p>Icons made by Freepik, Dave Gandy, Icons8 from
                 <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
                 is licensed by
-                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
-              </p>
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
             </div>
           </div>
         </footer>
