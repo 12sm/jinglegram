@@ -480,7 +480,7 @@ footer p a {
 @media (max-width: 767px) {
 
 /* FOR HOME PAGE */
-h1 {
+h1, h2.lobster.text-center {
   font-size: 3em;
 }
 
