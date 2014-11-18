@@ -479,6 +479,14 @@ footer p a {
 
 @media (max-width: 767px) {
 
+/* FOR HOME PAGE */
+h1 {
+font-size: 3em;
+}
+
+
+
+/* FOR JINGLE PAGE */
 h1.small-logo {
 font-size: 60px;
 text-align: center;
