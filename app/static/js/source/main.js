@@ -80,7 +80,7 @@
 
   function searchSelect(){
     id = $(this).attr('id');
-    ytURL = 'https://youtu.be/' + id;
+    ytURL = 'http://youtu.be/' + id;
     $('#youtube').val(ytURL);
     theVid = $('#youtube').val();
     $(".main").moveDown();

@@ -1,11 +1,25 @@
 {
-  "name"          : "Jinglegram",
-  "version"       : "0.0.1",
-  "private"       : true,
-  "dependencies"  : {
-    "express"     : "3.3.4",
-    "ejs"         : "1.0.0",
-    "offliberty"  : "0.0.4",
-    "mongodb"     : "1.3.23"
+  "name"                   : "Jinglegram",
+  "version"                : "0.0.1",
+  "private"                : true,
+  "scripts"                : {
+    "start"                : "node app/app.js"
+  },
+  "dependencies"           : {
+    "express"              : "3.3.4",
+    "ejs"                  : "1.0.0",
+    "offliberty"           : "0.0.4",
+    "mongodb"              : "1.3.23",
+    "lodash"               : "*",
+    "underscore.string"    : "*",
+    "minimatch"            : "0.3",
+    "request"              : "*",
+    "superagent"           : "0.21.0"
+  },
+  "devDependencies"        : {
+    "grunt"                : "*",
+    "grunt-contrib-jshint" : "*",
+    "jshint-stylish"       : "*",
+    "grunt-contrib-watch"  : "*"
   }
 }

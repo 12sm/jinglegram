@@ -1,4 +1,5 @@
 node_modules/
+/app/static/js/source/auth.js
 
 # Logs
 logs
